@@ -1,0 +1,9 @@
+module.exports = {
+    'from': '',
+    'gas': 0,
+    'gasPrice': 0,
+    'token': '',
+    'holders': [''],
+    'amounts': [],
+    'expireLockTimeStamps': []
+}

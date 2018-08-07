@@ -1,0 +1,40 @@
+{
+  "name": "locker-contract",
+  "version": "0.0.1",
+  "description": "Contracts for lock and release an amount of tokens",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "ganache": "ganache-cli -p 7545 -i 47 -l 4700000",
+    "migrate:dev": "truffle migrate --network development --reset",
+    "withdraw": "truffle exec ./scripts/token-locker/withdraw.js --network development",
+    "send:sample:locker": "truffle exec ./scripts/token-locker/sendSampleToken.js --network development",
+    "send:airdrop:locker": "truffle exec ./scripts/token-locker/sendAirdropToken.js --network development",
+    "release:locker": "truffle exec ./scripts/token-locker/release.js --network development",
+    "send:timelock": "truffle exec ./scripts/token-time-lock/send.js --network development",
+    "release:timelock": "truffle exec ./scripts/token-time-lock/release.js --network development",
+    "balance:locker": "truffle exec ./scripts/token-locker/balance.js --network development",
+    "balance:timelock": "truffle exec ./scripts/token-time-lock/balance.js --network development",
+    "test:dev": "truffle test --network development",
+    "test:parity": "truffle test --network eidoo"
+  },
+  "keywords": [
+    "ERC20",
+    "ethereum",
+    "blockchain"
+  ],
+  "author": "andreafspeziale",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.3.0",
+    "openzeppelin-solidity": "1.10.0",
+    "truffle-flattener": "^1.2.5"
+  },
+  "devDependencies": {
+    "eth-gas-reporter": "^0.1.9",
+    "ganache-cli": "6.1.4",
+    "truffle": "4.1.13"
+  }
+}
