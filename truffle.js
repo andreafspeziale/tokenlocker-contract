@@ -26,7 +26,7 @@ module.exports = {
       port: 8545,
       network_id: '1',
       gas: config.gas,
-      gasPrice: config.gasPrice,
+      gasPrice: config.gasPriceWei,
       from: config.from
     }
   },
@@ -34,7 +34,7 @@ module.exports = {
     reporter: 'eth-gas-reporter',
     reporterOptions : {
       currency: 'CHF',
-      gasPrice: config.gasPrice
+      gasPrice: config.gasPriceGWei,
     }
   }
 }

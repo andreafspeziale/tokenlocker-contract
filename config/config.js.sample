@@ -1,7 +1,8 @@
 module.exports = {
     'from': '',
     'gas': 0,
-    'gasPrice': 0,
+    'gasPriceWei': 0,
+    'gasPriceGWei': 0,
     'token': '',
     'holders': [''],
     'amounts': [],
