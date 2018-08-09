@@ -8,13 +8,13 @@ module.exports = async (deployer, network, accounts) => {
     let wallet
     let holders
     let amounts
-    let expireLockTimeStamps
+    let expireLockTimestamps
 
-    if(network != 'mainet') {
+    if(network != 'mainet' && network != 'ropsten') {
         wallet = accounts[0]
         holders = [accounts[2], accounts[3], accounts[4]]
         amounts = [web3.toWei(10), web3.toWei(10), web3.toWei(10)]
-        expireLockTimeStamps = [web3.eth.getBlock('latest').timestamp + 10, web3.eth.getBlock('latest').timestamp + 10, web3.eth.getBlock('latest').timestamp + 10]
+        expireLockTimestamps = [web3.eth.getBlock('latest').timestamp + 10, web3.eth.getBlock('latest').timestamp + 10, web3.eth.getBlock('latest').timestamp + 10]
 
         return deployer
             .then(() => {
@@ -25,7 +25,7 @@ module.exports = async (deployer, network, accounts) => {
                 return deployer.deploy(TokenLocker, 
                     holders, 
                     amounts, 
-                    expireLockTimeStamps, 
+                    expireLockTimestamps, 
                     tokenAddress, 
                     { from: wallet }
                 )
@@ -35,18 +35,17 @@ module.exports = async (deployer, network, accounts) => {
             })
     } else {
         tokenAddress = config.token
-        wallet = config.from
         holders = config.holders
         amounts = config.amounts
-        expireLockTimeStamps = config.expireLockTimeStamps
+        expireLockTimestamps = config.expireLockTimestamps
 
         return deployer
             .then(() => {
                 return deployer.deploy(TokenLocker, 
                     holders, 
                     amounts, 
-                    expireLockTimeStamps, 
-                    tokenAddress, {from: wallet})
+                    expireLockTimestamps, 
+                    tokenAddress)
             })
             .then((instance) => {
                 console.log(colors.green(`[tokenLockerInstance address]: ${instance.address}`))

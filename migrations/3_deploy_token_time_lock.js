@@ -4,7 +4,7 @@ const colors = require('colors')
 
 module.exports = (deployer, network, accounts) => {
 
-    if(network != 'mainet') {
+    if(network != 'mainet' && network != 'ropsten') {
         const beneficiary = accounts[1]
         const releaseTime = web3.eth.getBlock('latest').timestamp + 10
 

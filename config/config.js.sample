@@ -6,5 +6,7 @@ module.exports = {
     'token': '',
     'holders': [''],
     'amounts': [],
-    'expireLockTimeStamps': []
+    'expireLockTimestamps': [],
+    'infura_apikey': '',
+    'hd_wallet_mnemonic': ''
 }

@@ -30,6 +30,7 @@ Copy the sample into an actually .js file and fill it with your needs.
 ## Available networks
 - development
 - parity (usage needs to be granted)
+- ropsten (using infura and a metamask account)
 - mainet (needs a parity synced local node + ledger)
 
 ## Run local node
