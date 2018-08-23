@@ -1,5 +1,5 @@
 # TokenLocker and TokenTimelock
-The project contains two SC.
+The project contains:
 
 **SampleToken**: sample StandardBurnableToken ERC20 token to be used as locked token.
 
